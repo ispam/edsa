@@ -1,0 +1,74 @@
+<div class="row medium-collapse large-collapse show-for-medium-up">
+  <div class="large-12 medium-12 columns">
+    <div class="large-4 medium-4 columns">
+      <img src="/assets/edsa.png" style="height: 170px; margin-left:30px;">
+    </div>
+    <div class="large-4 medium-4 columns">
+      <img src="/assets/pais.png" style="height: 170px;">
+    </div>
+    <div class="large-4 medium-4 columns end">
+      <div style="width: 300px; margin-top: 25%;">
+
+              <div class="form-group">
+                <div class="large-7 medium-7 small-6 columns">
+                  <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Busqueda" %>
+                </div>
+                <div class="large-pull-3 medium-pull-3 small-3 columns" style="padding-left: 4px">
+                  <%= submit_tag "Buscar", :name => nil, :class => "button small search-button-height", style: "background: #369A30; height: 37px;" %>
+                </div>
+              </div>
+
+          </div>       
+    </div>
+  </div>
+</div>
+
+<div class="contain-to-grid sticky" style="-webkit-box-shadow: 0px 2px 5px 0px rgba(207,207,207,1);
+-moz-box-shadow: 0px 2px 5px 0px rgba(207,207,207,1);
+box-shadow: 0px 2px 5px 0px rgba(207,207,207,1);">
+<nav class="top-bar" data-options="sticky_on: [medium,large]" data-topbar role="navigation">
+    <ul class="title-area">
+       
+      <li class="name">
+        <h1>
+          <%= link_to "EDSA", root_path %>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+    
+    <section class="top-bar-section">
+       
+      <ul class="right">
+        <li class="divider"></li>
+        <li>
+          <%= link_to "Normatividad", normatividad_path %>
+        </li>
+        <li class="divider"></li>
+        <li class="has-dropdown not-click">
+        <%= link_to "Información de Interés", informacion_de_interes_path %>
+          <ul class="dropdown">
+            <li class="has-dropdown not-click"></li>
+            <li><%= link_to "Lista de Requisitos", informacion_de_interes_path %></li>
+            <li><%= link_to "Formulario Liquidación de Derechos", informacion_de_interes_path %></li>
+            <li><%= link_to "Formulario Solicitud de Legalización", informacion_de_interes_path %></li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+        <li>
+        <%= link_to "Informes de Gestión", informes_de_gestion_path %>
+        </li>
+        <li class="divider"></li>
+        <li class="has-dropdown not-click">
+        <%= link_to "Nuestra Entidad", nuestra_entidad_path %>
+          <ul class="dropdown">
+            <li class="has-dropdown not-click"></li>
+            <li><%= link_to "Organigrama", nuestra_entidad_path %></li>
+            <li><%= link_to "Misión y Visión", nuestra_entidad_path %></li>
+            <li><%= link_to "Objetivos y Funciones", nuestra_entidad_path %></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</div>

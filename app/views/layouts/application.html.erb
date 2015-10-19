@@ -1,14 +1,80 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Intento</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+       <title><%= content_for?(:title) ? yield(:title) : "EDSA" %></title>
 
-</body>
-</html>
+       <%= stylesheet_link_tag    "application" %>
+       <%= javascript_include_tag "vendor/modernizr" %>
+       <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+       <%= csrf_meta_tags %>
+     </head>
+
+     <body>
+     <%= render partial: "elements/navbar" %>
+       <%= yield %>
+       
+         <br>
+         <br>
+       <div class="row">
+       <hr>
+         <div class="large-3 medium-3 columns">
+           <img src="/assets/gob.png" style="margin-top: 20%;">
+           </div>
+         <div id="squares"class="large-3 medium-3 columns">
+           <li class="item1"><a href="http://wsp.presidencia.gov.co/" target="_blank">Presidencia</a></li>
+           <li class="item2"><a href="http://www.vicepresidencia.gov.co/" target="_blank">Vicepresidencia</a></li>
+           <li class="item3"><a href="http://www.minjusticia.gov.co" target="_blank">MinJusticia</a></li>
+           <li class="item4"><a href="http://www.mindefensa.gov.co/" target="_blank">MinDefensa</a></li>
+           <li class="item5"><a href="http://www.mininterior.gov.co/" target="_blank">MinInterior</a></li>
+           <li class="item6"><a href="http://www.cancilleria.gov.co/" target="_blank">MinRelaciones</a></li>
+         </div>
+
+         <div id="squares" class="large-3 medium-3 columns">
+           <li class="item7"><a href="http://www.minhacienda.gov.co/" target="_blank">MinHacienda</a></li>
+           <li class="item8"><a href="http://www.minminas.gov.co/" target="_blank">MinMinas</a></li>
+           <li class="item9"><a href="http://www.mincit.gov.co/" target="_blank">MinComercio</a></li>
+           <li class="item10"><a href="http://www.mineducacion.gov.co/" target="_blank">MinEducación</a></li>
+           <li class="item11"><a href="http://www.mincultura.gov.co/" target="_blank">MinCultura</a></li>
+           <li class="item12"><a href="https://www.minagricultura.gov.co" target="_blank">MinAgricultura</a></li>
+         </div>
+
+         <div id="squares" class="large-3 medium-3 columns">
+           <li class="item13"><a href="http://www.minambiente.gov.co/" target="_blank">MinAmbiente</a></li>
+           <li class="item14"><a href="http://www.mintransporte.gov.co/" target="_blank">MinTransporte</a></li>
+           <li class="item15"><a href="http://www.minvivienda.gov.co/" target="_blank">MinVivienda</a></li>
+           <li class="item16"><a href="http://www.mintrabajo.gov.co/" target="_blank">MinTrabajo</a></li>
+           <li class="item17"><a href="http://www.minsalud.gov.co/" target="_blank">MinSalud</a></li>
+           <li class="item18"><a href="http://www.urnadecristal.gov.co/" target="_blank">Urna de Cristal</a></li>
+         </div>
+       </div>
+       <br>
+     <footer style="background:#E5E4D7; -webkit-box-shadow: 0px -2px 5px 0px rgba(201,201,201,1);
+-moz-box-shadow: 0px -2px 5px 0px rgba(201,201,201,1);
+box-shadow: 0px -2px 5px 0px rgba(201,201,201,1);">
+       <div class="row text-center" style="color:#808681;font-family: Arial, Helvetica, sans-serif;">
+         <br>
+         <br>
+         <p style="margin-bottom:0px;"><strong>Empresa Departamental para la Salud</strong></p>
+         <p style="margin-bottom:0px;">Manizales - Caldas</p>
+         <p style="margin-bottom:0px;"><strong>Telefax:</strong> +57(6) 8800021</p>
+         <p style="margin-bottom:0px;"><strong>Email:</strong> contacto@edsa.gov.co</p>
+         <p style="margin-bottom:0px;"><strong>Edificio la Licorera</strong> "Plaza Bolivar" Cuarto Piso Oficina 400</p>
+         <br>
+         <p style="margin-bottom:0px;"><strong>Horario de Atención al Publico</strong></p>
+         <p style="margin-bottom:0px;">Lunes a Viernes de <strong>8:00am</strong> a <strong>12:00am</strong> - - <strong>2:00pm</strong> a <strong>6:00pm</strong>.</p>
+         <br>
+         <p style="margin-bottom:0px;"><strong>Todos</strong> lo Derechos Reservados <strong>©</strong> <%= Time.now.year %> edsa.gov.co</p>
+         <br>
+       </div>
+     </footer>
+
+   <script>
+     $(function(){ $(document).foundation(); });
+   </script>
+   </body>
+ </html>
+
+

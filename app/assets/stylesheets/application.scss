@@ -10,6 +10,26 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+#squares{ list-style-type: square; }
+.item1 {color:#C61620 }
+.item2 {color:#A21984 }
+.item3 {color:#233E99 }
+.item4 {color:#007DC3 }
+.item5 {color:#00A94F }
+.item6 {color:#492F92 }
+.item7 {color:#8A1F03 }
+.item8 {color:#C0AE00}
+.item9 {color:#439539}
+.item10 {color:#781D7D }
+.item11 {color:#92278F} 
+.item12 {color:#A0CF67}
+.item13 {color:#A0CF67}
+.item14 {color:#D06F1A }
+.item15 {color:#B38808 }
+.item16 {color:#333092}
+.item17 {color:#00A8CB } 
+.item18 {color:#C61620}
