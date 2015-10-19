@@ -1,5 +1,14 @@
 source 'https://rubygems.org'
 
+gem "refile", require: "refile/rails", github: "refile/refile"
+gem "refile-mini_magick"
+gem "refile-s3"
+gem 'fog'
+gem 'aws-sdk'
+gem 'rails_12factor', group: :production
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
+gem 'foundation-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
