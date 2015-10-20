@@ -4,21 +4,26 @@
 		<h1 class="text-center" style="font-size: 55px;">Normatividad</h1>
 		<br>
 		<hr>
-		<ul class="tabs vertical" data-tab>
-		  <li class="tab-title active"><a href="#panel11" style="color: white" >Decretos</a></li>
-		  <li class="tab-title"><a href="#panel21" style="color: white" >Leyes</a></li>
-		  <li class="tab-title"><a href="#panel31" style="color: white" >Resoluciones</a></li>
-		</ul>
-		<div class="tabs-content">
-		  <div class="content active" id="panel11">
-		    
-		  </div>
-		  <div class="content" id="panel21">
-		    <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
-		  </div>
-		  <div class="content" id="panel31">
-		    <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
-		  </div>
-		</div>
+    	<% @categories.first(3).each do |category| %>
+			<div class="large-4 medium-4 columns end">
+				<table>
+				  <thead>
+				    <tr>
+					    <th><%= category.name %></th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+	    			<% category.documents.each do |document| %>
+				    	<td>
+					    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+							<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+						</td>
+				    <% end %>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+	    <% end %>
 	</div>
 </div>

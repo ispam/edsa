@@ -109,7 +109,11 @@
 		<hr>
 		<div class="large-12 medium-12 columns">
 			<h1 class="text-center"style="font-size:55px;"> Plan de Acción</h1>
-			El plan de acción de la empresa departamental para la salud EDSA
+			El plan de acción de la empresa departamental para la salud EDSA.
+			<% Category.find(4) do %>
+		<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+		<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+<% end %>
 		</div>
 	</div>
 </div>

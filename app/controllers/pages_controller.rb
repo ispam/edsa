@@ -9,12 +9,13 @@ class PagesController < ApplicationController
   end
 
   def nuestra_entidad
+    @categories = Category.all 
   end
 
   def plan_de_accion
   end
 
   def normatividad
-    @category = Category.all
+    @categories = Category.all
   end
 end
