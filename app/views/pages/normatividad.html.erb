@@ -3,27 +3,47 @@
 		<br>
 		<h1 class="text-center" style="font-size: 55px;">Normatividad</h1>
 		<br>
+		<div class="panel callout text-center small-8 small-centered columns">
+		  <p>Para <strong>descargar</strong> algún documento dar <strong>click</strong> en el nombre del archivo.</p>
+		</div>
 		<hr>
-    	<% @categories.first(3).each do |category| %>
-			<div class="large-4 medium-4 columns end">
-				<table>
-				  <thead>
-				    <tr>
-					    <th><%= category.name %></th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				    <tr>
-	    			<% category.documents.each do |document| %>
-				    	<td>
-					    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
-							<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
-						</td>
-				    <% end %>
-				    </tr>
-				  </tbody>
-				</table>
-			</div>
-	    <% end %>
+
+
+		<ul class="tabs vertical" data-tab>
+		  <li class="tab-title active"><a href="#panel11"><%= @first_category.name %></a></li>
+		  <li class="tab-title"><a href="#panel21"><%= @second_category.name %></a></li>
+		  <li class="tab-title"><a href="#panel31"><%= @third_category.name %></a></li>
+		</ul>
+		<div class="tabs-content">
+		  <div class="content active" id="panel11">
+		  <p>Última actualizacion: <strong><%= localize( @first_category.updated_at, format: :short) %></strong> </p>
+			<% @first_category.documents.each do |document| %>
+				<div class="large-3 medium-3 small-6 columns end">
+					<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+					<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+				</div>
+			<% end %>
+		  </div>
+		  <div class="content" id="panel21">
+		  <p>Última actualizacion: <strong><%= localize( @second_category.updated_at, format: :short) %></strong> </p>
+  			<% @second_category.documents.each do |document| %>
+				<div class="large-3 medium-3 small-6 columns end">
+					<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+					<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+				</div>
+			<% end %>
+		  </div>
+		  <div class="content" id="panel31">
+		  <p>Última actualizacion: <strong><%= localize( @third_category.updated_at, format: :short) %></strong> </p>
+			<% @third_category.documents.each do |document| %>
+				<div class="large-3 medium-3 small-6 columns end">
+					<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+					<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+				</div>
+			<% end %>
+		  </div>
+		</div>
+    	
 	</div>
 </div>
+

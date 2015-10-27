@@ -1342,7 +1342,7 @@ $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-colo
 $tabs-navigation-bg-color: $greenie;
 $tabs-navigation-active-bg-color: scale-color($greenie, $lightness: -36%);
 $tabs-navigation-hover-bg-color: scale-color($greenie, $lightness: -16%);
-// $tabs-navigation-font-color: $jet;
+$tabs-navigation-font-color: $white;
 // $tabs-navigation-active-font-color: $tabs-navigation-font-color;
 // $tabs-navigation-font-size: rem-calc(16);
 // $tabs-navigation-font-family: $body-font-family;

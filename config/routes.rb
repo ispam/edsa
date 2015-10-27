@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get 'pages/nuestra_entidad', to: 'pages#nuestra_entidad', as: 'nuestra_entidad'
   get 'pages/plan_de_accion', to: 'pages#plan_de_accion', as: 'plan_de_accion'
   get 'pages/normatividad', to: 'pages#normatividad', as: 'normatividad'
+
+  resources :categories
   
 end

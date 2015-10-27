@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-
+gem "figaro"
+gem 'kaminari'
+gem 'ransack'	
 gem "refile", require: "refile/rails", github: "refile/refile"
 gem "refile-mini_magick"
 gem "refile-s3"

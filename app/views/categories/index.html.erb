@@ -1,0 +1,35 @@
+<% if params[:q]%>
+<br>
+<div class="row" style="background-color:white !important;">
+<br>
+  <h1 class="text-center">Resultados de Busqueda</h1>
+  <br>
+	  <div class="panel callout text-center small-8 small-centered columns">
+		  <p>Para <strong>descargar</strong> algún documento dar <strong>click</strong> en el nombre del archivo.</p>
+	  </div>
+  <hr>
+	
+	<% @categories.each do |category| %>
+		<div class="large-4 medium-4 columns end">
+			<table>
+			  <thead>
+			    <tr>
+				    <th><%= category.name %></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+    			<% category.documents.each do |document| %>
+			    	<td>
+				    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+						<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+					</td>
+			    <% end %>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+	<% end %>
+	<%= paginate @categories %>
+</div>
+<% end %>
