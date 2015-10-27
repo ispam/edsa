@@ -8,7 +8,28 @@
 		</div>
 		<hr>
 
+		
+			<div class="large-4 medium-4 columns end">
+				<table>
+				  <thead>
+				    <tr>
+					    <th><%= @fifth_category.name %></th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+	    			<% @fifth_category.documents.each do |document| %>
+				    	<td>
+					    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+							<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+						</td>
+				    <% end %>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
 
+		<%= paginate @categories %>
 
 	</div>
 </div>

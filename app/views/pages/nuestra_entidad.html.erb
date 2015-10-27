@@ -17,10 +17,10 @@
 		  <hr>
 		    <img src="/assets/org.png" style="margin:auto;">
 		  </section>
-		  <section role="tabpanel" aria-hidden="true" class="content active" id="panel2-2">
-		
+
+
+		<section role="tabpanel" aria-hidden="true" class="content active" id="panel2-2">
 		<hr>
-		
 		<div class="large-6 medium-6 columns">
 		<h2 class="text-center">Misión</h2>
 
@@ -109,15 +109,26 @@
 		<hr>
 		<div class="large-12 medium-12 columns">
 			<h1 class="text-center"style="font-size:55px;"> Plan de Acción</h1>
-			El plan de acción de la empresa departamental para la salud EDSA. Última actualizacion: <strong><%= localize( @fourth_category.updated_at, format: :short) %></strong> 
+			<br>
+			<p class="text-center">El plan de acción de la empresa departamental para la salud EDSA.</p> 
+
 		</div>
-		<br>
-		<br>
-			<% @fourth_category.documents.each do |document| %>
 
-					<%= link_to "#{document.title}", attachment_url(document, :file) %> 
-					<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
-
-			<% end %>
+		<div class="large-4 large-centered medium-4 medium-centered small-8 small-centered columns end">
+			<table>
+			  <thead>
+			    <tr>
+				    <th><%= @fourth_category.name %></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr><% @fourth_category.documents.each do |document| %>
+					<td><%= link_to "#{document.title}", attachment_url(document, :file) %> 
+						<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;"></td>
+				<% end %></tr>
+			    <tr><td>Última actualizacion: <strong><%= localize( @fourth_category.updated_at, format: :short) %></strong></td></tr>
+			  </tbody>
+			</table>
+		</div>
 	</div>
 </div>

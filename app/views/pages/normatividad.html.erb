@@ -8,41 +8,88 @@
 		</div>
 		<hr>
 
-
-		<ul class="tabs vertical" data-tab>
-		  <li class="tab-title active"><a href="#panel11"><%= @first_category.name %></a></li>
-		  <li class="tab-title"><a href="#panel21"><%= @second_category.name %></a></li>
-		  <li class="tab-title"><a href="#panel31"><%= @third_category.name %></a></li>
-		</ul>
-		<div class="tabs-content">
-		  <div class="content active" id="panel11">
-		  <p>Última actualizacion: <strong><%= localize( @first_category.updated_at, format: :short) %></strong> </p>
-			<% @first_category.documents.each do |document| %>
-				<div class="large-3 medium-3 small-6 columns end">
-					<%= link_to "#{document.title}", attachment_url(document, :file) %> 
-					<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
-				</div>
-			<% end %>
-		  </div>
-		  <div class="content" id="panel21">
-		  <p>Última actualizacion: <strong><%= localize( @second_category.updated_at, format: :short) %></strong> </p>
-  			<% @second_category.documents.each do |document| %>
-				<div class="large-3 medium-3 small-6 columns end">
-					<%= link_to "#{document.title}", attachment_url(document, :file) %> 
-					<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
-				</div>
-			<% end %>
-		  </div>
-		  <div class="content" id="panel31">
-		  <p>Última actualizacion: <strong><%= localize( @third_category.updated_at, format: :short) %></strong> </p>
-			<% @third_category.documents.each do |document| %>
-				<div class="large-3 medium-3 small-6 columns end">
-					<%= link_to "#{document.title}", attachment_url(document, :file) %> 
-					<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
-				</div>
-			<% end %>
-		  </div>
+		<div class="show-for-medium-up">
+			<ul class="tabs vertical" data-tab>
+			  <li class="tab-title active"><a href="#panel11"><%= @first_category.name %></a></li>
+			  <li class="tab-title"><a href="#panel21"><%= @second_category.name %></a></li>
+			  <li class="tab-title"><a href="#panel31"><%= @third_category.name %></a></li>
+			</ul>
+			<div class="tabs-content">
+			  <div class="content active" id="panel11">
+			  <p>Última actualizacion: <strong><%= localize( @first_category.updated_at, format: :short) %></strong> </p>
+				<% @first_category.documents.each do |document| %>
+					<div class="large-3 medium-3 small-6 columns end">
+						<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+						<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+					</div>
+				<% end %>
+			  </div>
+			  <div class="content" id="panel21">
+			  <p>Última actualizacion: <strong><%= localize( @second_category.updated_at, format: :short) %></strong> </p>
+	  			<% @second_category.documents.each do |document| %>
+					<div class="large-3 medium-3 small-6 columns end">
+						<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+						<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+					</div>
+				<% end %>
+			  </div>
+			  <div class="content" id="panel31">
+			  <p>Última actualizacion: <strong><%= localize( @third_category.updated_at, format: :short) %></strong> </p>
+				<% @third_category.documents.each do |document| %>
+					<div class="large-3 medium-3 small-6 columns end">
+						<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+						<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+					</div>
+				<% end %>
+			  </div>
+			</div>
 		</div>
+
+		<ul class="accordion show-for-small-up hide-for-medium-up" data-accordion>
+		  <li class="accordion-navigation">
+		    <a href="#panel2a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center"><%= @first_category.name %></a>
+		    <div id="panel2a" class="content active">
+		      <ul class="accordion" data-accordion="myAccordionGroup">
+		          <p>Última actualizacion: <strong><%= localize( @first_category.updated_at, format: :short) %></strong> </p>
+	  				<% @first_category.documents.each do |document| %>
+	  					<div class="large-3 medium-3 small-6 columns end">
+	  						<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+	  						<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+	  					</div>
+	  				<% end %>
+		      </ul>
+		    </div>
+		  </li>
+		  <li class="accordion-navigation">
+		    <a href="#panel3a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center"><%= @second_category.name %></a>
+		    <div id="panel3a" class="content">
+		      <ul class="accordion" data-accordion="myAccordionGroup">
+		          <p>Última actualizacion: <strong><%= localize( @second_category.updated_at, format: :short) %></strong> </p>
+	  	  			<% @second_category.documents.each do |document| %>
+	  					<div class="large-3 medium-3 small-6 columns end">
+	  						<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+	  						<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+	  					</div>
+	  				<% end %>
+		      </ul>
+		    </div>
+		  </li>
+		   <li class="accordion-navigation">
+		    <a href="#panel4a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center"><%= @third_category.name %></a>
+		    <div id="panel4a" class="content">
+		      <ul class="accordion" data-accordion="myAccordionGroup">
+		          <p>Última actualizacion: <strong><%= localize( @third_category.updated_at, format: :short) %></strong> </p>
+      				<% @third_category.documents.each do |document| %>
+      					<div class="large-3 medium-3 small-6 columns end">
+      						<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+      						<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;">
+      					</div>
+      				<% end %>
+		      </ul>
+		    </div>
+		  </li>
+
+		</ul>
     	
 	</div>
 </div>
