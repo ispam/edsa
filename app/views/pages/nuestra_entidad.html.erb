@@ -87,7 +87,7 @@
 		      <ul class="accordion" data-accordion="myAccordionGroup">
 		          <div class="row  end">
 
-        		    <p>EDSA cumple sus objetivos a través de las siguientes actividades:</p>
+        		    <!-- <p>EDSA cumple sus objetivos a través de las siguientes actividades:</p>
         		    <ul class="circle">
         		    	<li>Concede préstamos a sus asociados a interés, con fines de mejoramiento personal, familiar y para atender calamidades domésticas, mediante garantía personal o real.</li>
         		    	<li>Recibe depósitos en dineros de sus asociados en diferentes modalidades.</li>
@@ -97,7 +97,7 @@
         		    	<li>Coadyuva a sus asociados en la consecución de bienes y servicios.</li>
         		    	<li>Organiza actividades conjuntas con la Universidad Nacional de Colombia Sede Manizales, tendientes a coordinar programas para el bienestar social, familiar y personal de los asociados.</li>
         		    	<li>Realiza inversiones y desarrolla los demás programas y operaciones que la Junta Directiva establece para facilitar el cumplimiento de sus objetvios.</li>
-    		    	</ul>
+    		    	</ul> -->
 		          </div>
 		      </ul>
 		    </div>
@@ -117,10 +117,20 @@
 			<% @fourth_category.documents.each do |document| %>
 			<table>
 				 <tr>
-					<td class="text-center"><%= link_to "#{document.title}", attachment_url(document, :file) %> 
-					<img src="/assets/pdf-icon.png" style="width: 90px; height: 90px;"></td>
+					<td class="text-center">
+						<%= link_to "#{document.title}", attachment_url(document, :file) %>
+					</td>
 				</tr>
-			    <tr><td class="text-center">Última actualizacion: <strong><%= localize( @fourth_category.updated_at, format: :short) %></strong></td></tr>
+				<tr>
+					<td class="text-center"> 
+						<img src="/assets/pdf-icon.png" style="width: 90px; height: 90px;">
+					</td>
+				</tr>
+			    <tr>
+			    	<td class="text-center">
+			    		Última actualizacion: <strong><%= localize( @fourth_category.updated_at, format: :short) %></strong>
+		    		</td>
+	    		</tr>
 			  
 			</table>
 		<% end %>
