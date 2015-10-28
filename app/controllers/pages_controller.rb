@@ -17,6 +17,8 @@ class PagesController < ApplicationController
 
   def informes_de_gestion
     @fifth_category = Category.find(5)
+    @ninth_category = Category.find(9)
+    @tenth_category = Category.find(10)
   end
 
   def nuestra_entidad

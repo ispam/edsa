@@ -8,28 +8,177 @@
 		</div>
 		<hr>
 
-		
-			<div class="large-4 medium-3 small-6 columns end">
+		<div class="small-12 large-centered columns show-for-large-up">
+			<ul class="tabs" data-tab role="tablist">
+			  <li class="tab-title"><a href="#panel2-1" class="text-center"style="width: 300px; border-bottom-style: outset; border-radius: 40px;margin-left:10px;"><%= @fifth_category.name %></a></li>
+			  <li class="tab-title active"><a href="#panel2-2" class="text-center"style="width: 300px; border-bottom-style: outset; border-radius: 40px;margin-left:10px;"><%= @ninth_category.name %></a></li>
+			  <li class="tab-title"><a href="#panel2-3" class="text-center"style="width: 300px; border-bottom-style: outset; border-radius: 40px;margin-left:10px;"><%= @tenth_category.name %></a></li>
+			
+			</ul>
+		</div>
+
+		<div class="tabs-content show-for-large-up">
+		  <section role="tabpanel" aria-hidden="false" class="content" id="panel2-1">
+			<% @fifth_category.documents.each do |document| %>
+				<div class="large-4 medium-3 columns end">
+					<table style="margin:auto;">
+					    <tr>
+					    	<td>
+						    	<%= link_to "#{document.title}", attachment_url(document, :file) %>
+					    	</td>
+				    	</tr>
+				    	<tr>
+					    	<td class="text-center"> 
+								<img src="/assets/pdf-icon.png" style="width: 90px; height: 80px;">
+							</td>
+					    </tr>
+					</table>
+				</div>
+		    <% end %>
+			<br>
+			<div class="large-12 medium-12 small-12 columns">
+				<p class="text-center">Última actualizacion de <%= @fifth_category.name %>: <strong><%= localize( @fifth_category.updated_at, format: :short) %></strong></p>
+			</div>
+		    
+		  </section>
+
+
+		<section role="tabpanel" aria-hidden="true" class="content active" id="panel2-2">
+		<% @ninth_category.documents.each do |document| %>
+			<div class="large-4 medium-3 columns end">
 				<table style="margin:auto;">
-				  <thead>
 				    <tr>
-					    <th><%= @fifth_category.name %></th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				    <tr>
-	    			<% @fifth_category.documents.each do |document| %>
 				    	<td>
-					    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+					    	<%= link_to "#{document.title}", attachment_url(document, :file) %>
+				    	</td>
+			    	</tr>
+			    	<tr>
+				    	<td class="text-center">  
 							<img src="/assets/pdf-icon.png" style="width: 90px; height: 80px;">
 						</td>
-				    <% end %>
 				    </tr>
-				  </tbody>
 				</table>
 			</div>
+	    <% end %>
+		<br>
+		<div class="large-12 medium-12 small-12 columns">
+			<p class="text-center">Última actualizacion de <%= @ninth_category.name %>: <strong><%= localize( @ninth_category.updated_at, format: :short) %></strong></p>
+		</div>
+		    
+		</section>
 
-		<%= paginate @categories %>
+	 	<section role="tabpanel" aria-hidden="true" class="content" id="panel2-3">
+		 	<% @tenth_category.documents.each do |document| %>
+		 		<div class="large-4 medium-3 columns end">
+		 			<table style="margin:auto;">
+		 			    <tr>
+		 			    	<td>
+		 				    	<%= link_to "#{document.title}", attachment_url(document, :file) %>
+	 				    	</td>
+				    	</tr>
+				    	<tr>
+					    	<td class="text-center">  
+		 						<img src="/assets/pdf-icon.png" style="width: 90px; height: 80px;">
+		 					</td>
+		 			    </tr>
+		 			</table>
+		 		</div>
+		     <% end %>
+	 	<br>
+	 	<div class="large-12 medium-12 small-12 columns">
+			<p class="text-center">Última actualizacion de <%= @tenth_category.name %>: <strong><%= localize( @tenth_category.updated_at, format: :short) %></strong></p>
+		</div>
+		    
+	 	</section>
 
+		</div>
+
+
+		<ul class="accordion show-for-small-up hide-for-large-up" data-accordion>
+		  <li class="accordion-navigation">
+		    <a href="#panel2a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center"><%= @fifth_category.name %></a>
+		    <div id="panel2a" class="content active">
+		      <ul class="accordion" data-accordion="myAccordionGroup">
+		          <% @fifth_category.documents.each do |document| %>
+	    			 <div class="large-4 medium-3 small-6 columns end">
+			          	<table style="margin:auto;">
+						    <tr>
+						    	<td>
+							    	<%= link_to "#{document.title}", attachment_url(document, :file) %>
+						    	</td>
+					    	</tr>
+					    	<tr>
+						    	<td class="text-center">  
+									<img src="/assets/pdf-icon.png" style="width: 790px; height: 80px;">
+								</td>
+						    </tr>
+						</table>
+					</div>
+			    <% end %>
+					<div class="large-12 medium-12 small-12 columns">
+					<br>
+						<p class="text-center">Última actualizacion de <%= @fifth_category.name %>: <strong><%= localize( @fifth_category.updated_at, format: :short) %></strong></p>
+					</div>
+		      </ul>
+		    </div>
+		  </li>
+		  <li class="accordion-navigation">
+		    <a href="#panel3a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center"><%= @ninth_category.name %></a>
+		    <div id="panel3a" class="content">
+		      <ul class="accordion" data-accordion="myAccordionGroup">
+		          <% @ninth_category.documents.each do |document| %>
+	    			 <div class="large-4 medium-3 small-6 columns end">
+			          	<table style="margin:auto;">
+						    <tr>
+						    	<td>
+							    	<%= link_to "#{document.title}", attachment_url(document, :file) %>
+						    	</td>
+					    	</tr>
+					    	<tr>
+						    	<td class="text-center">  
+									<img src="/assets/pdf-icon.png" style="width: 790px; height: 80px;">
+								</td>
+						    </tr>
+						</table>
+					</div>
+			    <% end %>
+					<div class="large-12 medium-12 small-12 columns">
+					<br>
+						<p class="text-center">Última actualizacion de <%= @ninth_category.name %>: <strong><%= localize( @ninth_category.updated_at, format: :short) %></strong></p>
+					</div>
+		      </ul>
+		    </div>
+		  </li>
+		  <li class="accordion-navigation">
+		    <a href="#panel3a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center"><%= @tenth_category %></a>
+		      <ul class="accordion" data-accordion="myAccordionGroup">
+		          <% @tenth_category.documents.each do |document| %>
+	    			 <div class="large-4 medium-3 small-6 columns end">
+			          	<table style="margin:auto;">
+						    <tr>
+						    	<td>
+							    	<%= link_to "#{document.title}", attachment_url(document, :file) %>
+						    	</td>
+						    </tr>
+						    <tr>
+						    	<td class="text-center">  
+									<img src="/assets/pdf-icon.png" style="width: 790px; height: 80px;">
+								</td>
+						    </tr>
+						</table>
+					</div>
+			    <% end %>
+					<div class="large-12 medium-12 small-12 columns">
+					<br>
+						<p class="text-center">Última actualizacion de <%= @tenth_category.name %>: <strong><%= localize( @tenth_category.updated_at, format: :short) %></strong></p>
+					</div>
+		      </ul>
+		    </div>
+		  </li>
+		   
+
+		</ul>
+		<hr>
+		
 	</div>
 </div>

@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def index
-		@documents = Document.all
+		
 	end
 
 	private
