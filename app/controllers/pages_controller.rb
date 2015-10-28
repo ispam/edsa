@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def inicio
+    @galeries = Galery.all
   end
 
   def informacion_de_interes

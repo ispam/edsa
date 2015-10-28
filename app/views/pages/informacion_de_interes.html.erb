@@ -45,19 +45,19 @@
 		<section role="tabpanel" aria-hidden="true" class="content active" id="panel2-2">
 		<% @seventh_category.documents.each do |document| %>
 			<div class="large-4 medium-3 columns end">
-				<table style="margin:auto;">
-<!-- 				    <tr>
+				<!-- <table style="margin:auto;">
+				    <tr>
 				    	<td class="text-center">
-					    	<%= link_to "#{document.title}", attachment_url(document, :file) %>
+					    	<%# link_to "#{document.title}", attachment_url(document, :file) %>
 				    	</td>
 			    	</tr>
 			    	<tr>
 				    	<td class="text-center">  
 							<img src="/assets/pdf-icon.png" style="width: 90px; height: 80px;">
 						</td>
-				    </tr> -->
+				    </tr>
+				</table> -->
 				    <h2>PRÓXIMAMENTE</h2>
-				</table>
 			</div>
 	    <% end %>
 		<br>
@@ -126,12 +126,12 @@
 		    <a href="#panel3a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center"><%= @seventh_category.name %></a>
 		    <div id="panel3a" class="content">
 		      <ul class="accordion" data-accordion="myAccordionGroup">
-		          <% @seventh_category.documents.each do |document| %>
-	    			 <div class="large-4 medium-3 small-6 columns end">
+		          <%# @seventh_category.documents.each do |document| %>
+	    			 <!-- <div class="large-4 medium-3 small-6 columns end">
 			          	<table style="margin:auto;">
 						    <tr>
 						    	<td>
-							    	<%= link_to "#{document.title}", attachment_url(document, :file) %>
+							    	<%# link_to "#{document.title}", attachment_url(document, :file) %>
 						    	</td>
 					    	</tr>
 					    	<tr>
@@ -140,8 +140,10 @@
 								</td>
 						    </tr>
 						</table>
-					</div>
-			    <% end %>
+					</div> -->
+			    <%# end %>
+			    <h2>PRÓXIMAMENTE</h2>
+
 					<div class="large-12 medium-12 small-12 columns">
 					<br>
 						<p class="text-center">Última actualizacion de <%= @seventh_category.name %>: <strong><%= localize( @seventh_category.updated_at, format: :short) %></strong></p>

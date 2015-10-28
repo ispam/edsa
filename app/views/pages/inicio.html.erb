@@ -39,6 +39,17 @@
 		<br>
           <h2 class="subheader">Galeria</h2>
           
+          <div id="orbitSlider2">
+              <ul class="example-orbit" data-orbit data-options="pause_on_hover:false; timer_speed:2500;">
+                 <% @galeries.shuffle.each do |galery| %>
+                  <li>                  
+                    <%= image_tag attachment_url(galery, :file, :fill, 270, 230) %>
+                  </li>
+                <% end %>
+              </ul>
+          </div>
+
+          
         
         </div> 
         
