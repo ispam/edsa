@@ -114,15 +114,16 @@
 		</div>
 
 		<div class="large-4 large-centered medium-4 medium-centered small-8 small-centered columns end">
+			<% @fourth_category.documents.each do |document| %>
 			<table>
-			 
-			    <tr><% @fourth_category.documents.each do |document| %>
+				 <tr>
 					<td class="text-center"><%= link_to "#{document.title}", attachment_url(document, :file) %> 
-						<img src="/assets/pdf-icon.png" style="width: 80px; height: 80px;"></td>
-				<% end %></tr>
+					<img src="/assets/pdf-icon.png" style="width: 90px; height: 90px;"></td>
+				</tr>
 			    <tr><td class="text-center">Última actualizacion: <strong><%= localize( @fourth_category.updated_at, format: :short) %></strong></td></tr>
 			  
 			</table>
+		<% end %>
 		</div>
 	</div>
 </div>

@@ -1,59 +1,152 @@
 <div class="row">
 	<div class="large-12 medium-12 columns">
 		<br>
-		<img src="/assets/Información de Interés.png">
+		<img src="/assets/Infomración de Interés.png">
 		<br>
+		<div class="panel callout text-center small-8 small-centered columns">
+		  <p>Para <strong>descargar</strong> algún documento dar <strong>click</strong> en el nombre del archivo.</p>
+		</div>
 		<hr>
 		<div class="small-12 large-centered columns show-for-large-up">
 			<ul class="tabs" data-tab role="tablist">
-			  <li class="tab-title"><a href="#panel2-1" class="text-center"style="width: 300px; border-bottom-style: outset; border-radius: 40px;margin-left:10px;">Organigrama</a></li>
-			  <li class="tab-title active"><a href="#panel2-2" class="text-center"style="width: 300px; border-bottom-style: outset; border-radius: 40px;margin-left:10px;">Misión y Visión</a></li>
+			  <li class="tab-title"><a href="#panel2-1" class="text-center"style="width: 300px; border-bottom-style: outset; border-radius: 40px;margin-left:10px;"><%= @sixth_category.name %></a></li>
+			  <li class="tab-title active"><a href="#panel2-2" class="text-center"style="width: 300px; border-bottom-style: outset; border-radius: 40px;margin-left:10px;"><%= @seventh_category.name %></a></li>
+			  <li class="tab-title"><a href="#panel2-3" class="text-center"style="width: 300px; border-bottom-style: outset; border-radius: 40px;margin-left:10px;"><%= @eigth_category.name %></a></li>
 			
 			</ul>
 		</div>
 
 		<div class="tabs-content show-for-large-up">
 		  <section role="tabpanel" aria-hidden="false" class="content" id="panel2-1">
-		  <hr>
+			<% @sixth_category.documents.each do |document| %>
+				<div class="large-4 medium-3 columns end">
+					<table style="margin:auto;">
+					    <tr>
+					    	<td>
+						    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+								<img src="/assets/pdf-icon.png" style="width: 90px; height: 80px;">
+							</td>
+					    </tr>
+					</table>
+				</div>
+		    <% end %>
+			<br>
+			<div class="large-12 medium-12 small-12 columns">
+				<p class="text-center">Última actualizacion de <%= @sixth_category.name %>: <strong><%= localize( @sixth_category.updated_at, format: :short) %></strong></p>
+			</div>
 		    
 		  </section>
 
 
 		<section role="tabpanel" aria-hidden="true" class="content active" id="panel2-2">
-		<hr>
-		
+		<% @seventh_category.documents.each do |document| %>
+			<div class="large-4 medium-3 columns end">
+				<table style="margin:auto;">
+				    <tr>
+				    	<td>
+					    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+							<img src="/assets/pdf-icon.png" style="width: 90px; height: 80px;">
+						</td>
+				    </tr>
+				</table>
+			</div>
+	    <% end %>
+		<br>
+		<div class="large-12 medium-12 small-12 columns">
+			<p class="text-center">Última actualizacion de <%= @seventh_category.name %>: <strong><%= localize( @seventh_category.updated_at, format: :short) %></strong></p>
+		</div>
+		    
 		</section>
-		 
+
+	 	<section role="tabpanel" aria-hidden="true" class="content" id="panel2-3">
+		 	<% @eigth_category.documents.each do |document| %>
+		 		<div class="large-4 medium-3 columns end">
+		 			<table style="margin:auto;">
+		 			    <tr>
+		 			    	<td>
+		 				    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+		 						<img src="/assets/pdf-icon.png" style="width: 90px; height: 80px;">
+		 					</td>
+		 			    </tr>
+		 			</table>
+		 		</div>
+		     <% end %>
+	 	<br>
+	 	<div class="large-12 medium-12 small-12 columns">
+			<p class="text-center">Última actualizacion de <%= @eigth_category.name %>: <strong><%= localize( @eigth_category.updated_at, format: :short) %></strong></p>
+		</div>
+		    
+	 	</section>
+
 		</div>
 
 
 		<ul class="accordion show-for-small-up hide-for-large-up" data-accordion>
 		  <li class="accordion-navigation">
-		    <a href="#panel2a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center">Organigrama</a>
+		    <a href="#panel2a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center"><%= @sixth_category.name %></a>
 		    <div id="panel2a" class="content active">
 		      <ul class="accordion" data-accordion="myAccordionGroup">
-		          <div class="row">
-		           <hr>
-				    
-		          </div>
+		          <% @sixth_category.documents.each do |document| %>
+	    			 <div class="large-4 medium-3 small-6 columns end">
+			          	<table style="margin:auto;">
+						    <tr>
+						    	<td>
+							    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+									<img src="/assets/pdf-icon.png" style="width: 790px; height: 80px;">
+								</td>
+						    </tr>
+						</table>
+					</div>
+			    <% end %>
+					<div class="large-12 medium-12 small-12 columns">
+					<br>
+						<p class="text-center">Última actualizacion de <%= @sixth_category.name %>: <strong><%= localize( @sixth_category.updated_at, format: :short) %></strong></p>
+					</div>
 		      </ul>
 		    </div>
 		  </li>
 		  <li class="accordion-navigation">
-		    <a href="#panel3a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center">Misión y Visión</a>
+		    <a href="#panel3a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center"><%= @seventh_category.name %></a>
 		    <div id="panel3a" class="content">
 		      <ul class="accordion" data-accordion="myAccordionGroup">
-		          <div class="row  end">
-		            <hr>
-	            		<img src="/assets/Misión.png">
-
-	            		<p class="text-justify">Somos una empresa administradora y fiscalizadora de los recursos del monopolio rentístico de los juegos de suerte y azar en Caldas, con dedicación y transparencia, buscamos el desarrollo de una cultura en torno a la legalidad en los juegos de suerte y azar en procura de una maximización de los recursos que van dirigidos al cubrimiento de la salud de la población menos favorecida del Departamento.</p>
-
-	            		<hr>
-
-	            		<img src="/assets/Visión.png">
-	            		<p class="text-justify">Para finales del <%= Time.now.year %>, seremos reconocidos como modelo de organización en el Departamento, con los más altos estándares de credibilidad, responsabilidad y transparencia en la administración y fiscalización de los recursos del monopolio rentístico de los juegos de suerte y azar.</p>
-		          </div>
+		          <% @seventh_category.documents.each do |document| %>
+	    			 <div class="large-4 medium-3 small-6 columns end">
+			          	<table style="margin:auto;">
+						    <tr>
+						    	<td>
+							    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+									<img src="/assets/pdf-icon.png" style="width: 790px; height: 80px;">
+								</td>
+						    </tr>
+						</table>
+					</div>
+			    <% end %>
+					<div class="large-12 medium-12 small-12 columns">
+					<br>
+						<p class="text-center">Última actualizacion de <%= @seventh_category.name %>: <strong><%= localize( @seventh_category.updated_at, format: :short) %></strong></p>
+					</div>
+		      </ul>
+		    </div>
+		  </li>
+		  <li class="accordion-navigation">
+		    <a href="#panel3a" style="border-radius: 40px; border-style: outset; color:white !important" class="text-center"><%= @eigth_category %></a>
+		      <ul class="accordion" data-accordion="myAccordionGroup">
+		          <% @eigth_category.documents.each do |document| %>
+	    			 <div class="large-4 medium-3 small-6 columns end">
+			          	<table style="margin:auto;">
+						    <tr>
+						    	<td>
+							    	<%= link_to "#{document.title}", attachment_url(document, :file) %> 
+									<img src="/assets/pdf-icon.png" style="width: 790px; height: 80px;">
+								</td>
+						    </tr>
+						</table>
+					</div>
+			    <% end %>
+					<div class="large-12 medium-12 small-12 columns">
+					<br>
+						<p class="text-center">Última actualizacion de <%= @eigth_category.name %>: <strong><%= localize( @eigth_category.updated_at, format: :short) %></strong></p>
+					</div>
 		      </ul>
 		    </div>
 		  </li>

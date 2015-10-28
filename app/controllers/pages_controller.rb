@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   end
 
   def informacion_de_interes
+    @sixth_category = Category.find(6)
+    @seventh_category = Category.find(7)
+    @eigth_category = Category.find(8)
   end
 
   def informes_de_gestion
